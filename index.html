@@ -1,27 +1,129 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FastAPI Multi-Tenant Enterprise - Blueprint Definitivo</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.fluid.classless.dark.min.css">
     <style>
-        body { font-family: 'Fira Code', monospace; padding: 2rem; max-width: 900px; margin: 0 auto; }
-        .hero { text-align: center; padding: 4rem 0; border-bottom: 1px solid #333; }
-        .badge { background: #008f11; color: white; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
-        .preview-container { background: #111; padding: 2rem; border-radius: 8px; border: 1px solid #222; margin: 2rem 0; }
-        .paywall-blur { background: linear-gradient(180deg, #111 0%, rgba(17,17,17,0) 100%); padding: 3rem; text-align: center; border: 2px dashed #0066cc; border-radius: 8px; margin-top: 3rem; }
-        .price { font-size: 2.5rem; color: #00ff66; font-weight: bold; margin: 1rem 0; }
-        pre { background: #1a1a1a !important; padding: 1rem; border-radius: 6px; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; 
+            padding: 2rem; 
+            max-width: 900px; 
+            margin: 0 auto; 
+            background-color: #0d1117; 
+            color: #c9d1d9;
+        }
+        .hero { 
+            text-align: center; 
+            padding: 4rem 0; 
+            border-bottom: 1px solid #21262d; 
+        }
+        .badge { 
+            background: #238636; 
+            color: white; 
+            padding: 0.3rem 0.6rem; 
+            border-radius: 4px; 
+            font-size: 0.8rem; 
+            font-weight: bold; 
+            display: inline-block; 
+            margin-bottom: 1rem; 
+        }
+        h1, h2, h3 {
+            font-weight: 600;
+        }
+        h1 { color: #f0f6fc; }
+        
+        /* Contenedor del manual con Look & Feel de Documentación Pro */
+        .preview-container { 
+            background: #161b22; 
+            padding: 2.5rem; 
+            border-radius: 6px; 
+            border: 1px solid #30363d; 
+            margin: 2rem 0; 
+        }
+        .preview-container h2 { 
+            color: #58a6ff !important; 
+            border-bottom: 1px solid #21262d; 
+            padding-bottom: 0.5rem; 
+            margin-top: 2.5rem; 
+        }
+        .preview-container h3 { 
+            color: #1f6feb !important; 
+            margin-top: 1.8rem; 
+        }
+        .preview-container p, .preview-container li { 
+            color: #c9d1d9 !important; 
+            line-height: 1.6; 
+        }
+        ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Muro de pago con alto contraste comercial */
+        .paywall-blur { 
+            background: linear-gradient(180deg, #161b22 0%, #0d1117 100%); 
+            padding: 3.5rem; 
+            text-align: center; 
+            border: 2px dashed #1f6feb; 
+            border-radius: 8px; 
+            margin-top: 3.5rem; 
+        }
+        .price { 
+            font-size: 3rem; 
+            color: #3fb950; 
+            font-weight: bold; 
+            margin: 1.5rem 0; 
+            font-family: 'Fira Code', monospace;
+        }
+        
+        /* Bloques de Código de Terminal y Python */
+        pre { 
+            background: #0d1117 !important; 
+            padding: 1.2rem; 
+            border-radius: 6px; 
+            border: 1px solid #30363d; 
+            overflow-x: auto;
+        }
+        code { 
+            font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', monospace;
+            color: #ff7b72 !important; 
+            background: none !important;
+            padding: 0 !important;
+        }
+        p code, li code {
+            background: #21262d !important;
+            color: #ff7b72 !important;
+            padding: 0.2rem 0.4rem !important;
+            border-radius: 4px;
+        }
+        
+        /* Botón de Acción Premium */
+        .cta-button {
+            background-color: #238636 !important;
+            border-color: #238636 !important;
+            color: #ffffff !important;
+            font-size: 1.3rem;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+        .cta-button:hover {
+            background-color: #2ea043 !important;
+        }
     </style>
 </head>
 <body>
 
     <header class="hero">
-        <span class="badge">PREMIUM DEV BLUEPRINT</span>
+        <span class="badge">PREMIUM ARCHITECTURE BLUEPRINT</span>
         <h1>SaaS Multi-Tenant Enterprise con FastAPI y PostgreSQL</h1>
-        <p>Aprende el patrón de aislamiento lógico por esquemas independientes que permite a una sola aplicación servir a múltiples organizaciones de forma segura, económica y robusta.</p>
-        <a href="#comprar" class="button">🚀 Obtener Acceso al Manual + Código Fuente</a>
+        <p>Aprende el patrón de aislamiento lógico por esquemas independientes que permite a una sola aplicación servir a múltiples organizaciones de forma segura, económica y con rendimiento Senior.</p>
+        <a href="#comprar" class="cta-button">🚀 Obtener Acceso al Manual + Código Fuente</a>
     </header>
 
     <main>
@@ -29,25 +131,51 @@
             <h2>Capítulo 1: Arquitectura y Visión General</h2>
             <h3>1.1. El Problema a Resolver</h3>
             <p>Las aplicaciones SaaS deben servir a múltiples clientes (tenants). El reto es: ¿cómo almacenamos los datos de cada cliente para que estén completamente aislados entre sí? Un cliente "Empresa A" no debe, bajo ninguna circunstancia, poder ver los datos de "Empresa B".</p>
-
-            <p>Existen varias estrategias:</p>
+            
+            <p>Existen varias estrategias en la industria:</p>
             <ul>
                 <li><strong>Una Base de Datos por Tenant:</strong> Muy seguro, pero muy costoso y difícil de mantener. Cada nuevo cliente requiere aprovisionar una nueva base de datos.</li>
                 <li><strong>Una Tabla por Tenant:</strong> Inseguro y complejo. El esquema de la base de datos se vuelve un caos.</li>
-                <li><strong>Discriminación por Fila (Clave Foránea):</strong> Todas los datos de todos los clientes en las mismas tablas, con una columna <code>tenant_id</code> en cada una. Es la estrategia más común, pero tiene riesgo de errores de programación que filtren datos si una consulta <code>WHERE</code> olvida filtrar por <code>tenant_id</code>.</li>
+                <li><strong>Discriminación por Fila (Clave Foránea):</strong> Todos los datos de todos los clientes en las mismas tablas, con una columna <code>tenant_id</code> en cada una. Es la estrategia más común, pero tiene riesgo de errores de programación que filtren datos si una consulta <code>WHERE</code> olvida filtrar por el identificador del cliente.</li>
             </ul>
 
             <h3>1.2. Nuestra Solución: Un Único BBDD, Múltiples Esquemas</h3>
-            <p>En este proyecto implementaremos una solución elegante y robusta utilizando una característica poderosa de PostgreSQL: los <strong>esquemas</strong>.</p>
+            <p>En este proyecto implementaremos una solución elegante y robusta que ofrece lo mejor de varios mundos, utilizando una característica poderosa de PostgreSQL: los <strong>esquemas</strong>.</p>
+            
+            <p>La topología de la arquitectura se compone de:</p>
             <ul>
                 <li><strong>Una única instancia de aplicación:</strong> Desplegaremos una sola aplicación FastAPI.</li>
-                <li><strong>Una única base de datos PostgreSQL:</strong> No necesitamos gestionar múltiples bases de datos.</li>
-                <li><strong>Un esquema <code>public</code>:</strong> Contendrá una tabla <code>tenants</code> que lista todos nuestros clientes y el nombre de su esquema.</li>
-                <li><strong>Un esquema por cada tenant:</strong> Cada vez que se registre un nuevo cliente, crearemos dinámicamente un nuevo esquema (ej. <code>schema_empresa_a</code>). Todas las tablas del cliente vivirán dentro de su propio esquema.</li>
+                <li><strong>Una única base de datos PostgreSQL:</strong> No necesitamos gestionar múltiples bases de datos físicas.</li>
+                <li><strong>Un esquema <code>public</code>:</strong> Contendrá la información compartida y, lo más importante, una tabla <code>tenants</code> que lista todos nuestros clientes y el nombre de su esquema.</li>
+                <li><strong>Un esquema por cada tenant:</strong> Cada vez que se registre un nuevo cliente (ej. <code>empresa_a</code>), crearemos dinámicamente un nuevo esquema en la base de datos (ej. <code>schema_empresa_a</code>). Todas las tablas con los datos de ese cliente (usuarios, pedidos, facturas) vivirán dentro de su propio esquema protegido.</li>
             </ul>
 
+            <p>El "corazón" de nuestra aplicación será un middleware que, para cada petición entrante, identificará al cliente y ejecutará un comando SQL (<code>SET search_path TO schema_empresa_a, public</code>) antes de procesar la lógica de negocio. Esto hace que todas las consultas de esa transacción "vean" únicamente las tablas del cliente y las tablas públicas, logrando un aislamiento perfecto a nivel de base de datos.</p>
+
             <h2>Capítulo 2: Configuración del Entorno de Desarrollo</h2>
-            <p>Asegúrate de contar con Python 3.9+ y PostgreSQL 12+. Crea tu entorno virtual e instala las dependencias de producción indispensables:</p>
+            <p>Antes de escribir una sola línea de código, debemos preparar las herramientas esenciales para garantizar el aislamiento de dependencias.</p>
+
+            <h3>2.1. Prerrequisitos</h3>
+            <ul>
+                <li><strong>Python:</strong> Versión 3.9 o superior.</li>
+                <li><strong>PostgreSQL:</strong> Versión 12 o superior.</li>
+                <li><strong>Editor de Código:</strong> Visual Studio Code con extensión de Python.</li>
+            </ul>
+
+            <h3>2.2. Entorno Virtual y Dependencias</h3>
+            <p>Ejecuta los siguientes comandos en tu terminal para inicializar el directorio base:</p>
+            <pre><code># 1. Crea la carpeta del proyecto
+mkdir pedidos-actual
+cd pedidos-actual
+
+# 2. Crea un entorno virtual
+python -m venv venv
+
+# 3. Activa el entorno virtual
+# En Windows:
+venv\Scripts\activate</code></pre>
+
+            <p>A continuación, se detalla el archivo <code>requirements.txt</code> con las librerías base de producción congeladas:</p>
             <pre><code>fastapi==0.135.2
 uvicorn[standard]
 sqlalchemy==2.0.49
@@ -56,30 +184,49 @@ python-dotenv
 passlib[bcrypt]
 Jinja2==3.1.6</code></pre>
 
-            <h2>Capítulo 3: La Base de Datos y el Esquema <code>public</code></h2>
-            <p>Configuramos el motor relacional de SQLAlchemy empleando pool de conexiones optimizado para soportar alta demanda transaccional:</p>
-            <pre><code>engine = create_engine(DATABASE_URL, pool_pre_ping=True)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)</code></pre>
+            <h2>Capítulo 3: La Base de Datos y el Esquema `public`</h2>
+            <p>Definimos el módulo relacional encargado de orquestar el ciclo de vida de las conexiones y las sesiones hacia PostgreSQL.</p>
+
+            <h3>3.1. El Orquestador de Sesiones (<code>database.py</code>)</h3>
+            <p>Implementación del motor ORM empleando políticas de validación preventiva de conexiones remotas (<code>pool_pre_ping</code>):</p>
+            <pre><code>import os
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, declarative_base
+
+# El motor que gestiona la conexión a la base de datos de forma eficiente
+engine = create_engine(
+    DATABASE_URL,
+    pool_pre_ping=True  # Revalida conexiones muertas antes de usarlas
+)
+
+# Fábrica transaccional de sesiones
+SessionLocal = sessionmaker(
+    autocommit=False,
+    autoflush=False,
+    bind=engine
+)
+
+Base = declarative_base()</code></pre>
         </div>
 
         <div id="comprar" class="paywall-blur">
-            <h2>🔒 Capítulos Avanzados Protegidos</h2>
-            <p>Para leer el núcleo técnico de la arquitectura y descargar los archivos listos para producción, adquiere la guía completa:</p>
-
-            <div style="text-align: left; max-width: 500px; margin: 0 auto; padding: 1rem 0;">
-                ✔️ <strong>Capítulo 4:</strong> Inyección de dependencias dinámicas para conmutar el <code>search_path</code> por petición HTTP.<br>
-                ✔️ <strong>Capítulo 5:</strong> Onboarding automático con clonación atómica de esquemas base (Transacciones Seguras).<br>
-                ✔️ <strong>Capítulo 7:</strong> Sistema complejo de Permisos y Autenticación Basada en Roles (RBAC) aislado por cliente.<br>
-                ✔️ <strong>Capítulo 9:</strong> Estrategia de despliegue industrial con Gunicorn y versionamiento dinámico con Alembic.
+            <h2>🔒 Accede al Núcleo de la Arquitectura Avanzada</h2>
+            <p>Lleva tus habilidades backend al nivel Senior. Desbloquea el manual completo en PDF de alta resolución y descarga el repositorio de código fuente listo para producción:</p>
+            
+            <div style="text-align: left; max-width: 550px; margin: 1.5rem auto; padding: 1rem; line-height: 1.8;">
+                ✔️ <strong>Capítulo 4:</strong> Inyección de dependencias asíncronas para mutar el <code>search_path</code> dinámicamente por petición HTTP.<br>
+                ✔️ <strong>Capítulo 5:</strong> Onboarding automático con clonación atómica y transaccional de esquemas base.<br>
+                ✔️ <strong>Capítulo 7:</strong> Matriz transaccional completa de Permisos y Roles (RBAC N:M) aislada por tenant.<br>
+                ✔️ <strong>Capítulo 9:</strong> Despliegue con clúster de trabajadores ASGI (Gunicorn) y estrategia de migraciones automáticas globales con Alembic.
             </div>
 
             <div class="price">$29.00 USD</div>
 
-            <a href="TU_LINK_DE_GUMROAD_AQUÍ" class="button primary" style="font-size: 1.3rem; padding: 1rem 2rem;">
+            <a href="TU_LINK_DE_GUMROAD_AQUÍ" class="cta-button" style="font-size: 1.4rem; padding: 1.2rem 2.5rem; background-color: #238636;">
                 🛒 Comprar Manual Completo + Código Fuente
             </a>
-
-            <p style="font-size: 0.8rem; color: #666; margin-top: 1rem;">Entrega inmediata. Descarga garantizada del PDF de alta resolución y acceso al repositorio base.</p>
+            
+            <p style="font-size: 0.85rem; color: #8b949e; margin-top: 1.5rem;">Procesamiento de pago 100% cifrado y seguro. Entrega automatizada de archivos inmediatamente después de la compra.</p>
         </div>
     </main>
 
